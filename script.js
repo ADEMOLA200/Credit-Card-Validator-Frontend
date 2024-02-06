@@ -9,7 +9,7 @@ function validateCreditCard() {
         exp_year: expYear
     };
 
-    fetch('https://plum-line-production.up.railway.app/', {
+    fetch('https://plum-line-production.up.railway.app', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -23,15 +23,20 @@ function validateCreditCard() {
         return response.json();
     })
     .then(result => {
-        // Check if response contains valid JSON data
-        if (result && result.valid !== undefined) {
-            document.getElementById('result').innerHTML = result.valid ? 'Card is valid' : 'Card is invalid';
-        } else {
-            throw new Error('Invalid JSON data received');
-        }
+        document.getElementById('result').innerHTML = result.valid ? 'Card is valid' : 'Card is invalid';
     })
     .catch(error => {
         console.error('Error:', error);
         document.getElementById('result').innerHTML = 'Error validating credit card';
     });
 }
+
+// Disable right-click
+// document.addEventListener('contextmenu', function (e) {
+//     e.preventDefault();
+// });
+
+document.getElementById('validateButton').addEventListener('click', function (e) {
+    e.preventDefault(); 
+    validateCreditCard();
+});
