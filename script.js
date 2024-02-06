@@ -9,7 +9,7 @@ function validateCreditCard() {
         exp_year: expYear
     };
 
-    fetch('https://credit-card-validator-production.up.railway.app/', {
+    fetch('https://plum-line-production.up.railway.app/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
