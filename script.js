@@ -50,3 +50,8 @@ document.getElementById('validateButton').addEventListener('click', function (e)
     e.preventDefault(); 
     validateCreditCard();
 });
+
+// Disable right-click
+document.addEventListener('contextmenu', function (e) {
+e.preventDefault();
+});
