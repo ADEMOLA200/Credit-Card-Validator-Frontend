@@ -21,7 +21,7 @@ function validateCreditCard() {
     // Disable button during request
     document.getElementById('validateButton').disabled = true;
 
-    fetch('https://plum-line-production.up.railway.app/', { 
+    fetch('https://plum-line-production.up.railway.app', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
